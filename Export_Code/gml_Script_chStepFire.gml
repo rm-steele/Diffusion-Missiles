@@ -50,13 +50,19 @@ if (kFire && kFirePushedSteps == 0 && nofire == 0 && turning == 0 && morphing ==
         }
     }
 }
-if (global.currentweapon == 2 && kFire && kFirePushedSteps > 0 && global.diffusionmissiles == 1 && nofire == 0 && (global.opmslstyle == 1 || (global.opmslstyle == 0 && armmsl == 1)))
+if ((global.opdiffchargestyle == 0 && kFire && kFirePushedSteps > 0) || (global.opdiffchargestyle == 1 && (!kFire) && ((global.opmslstyle == 0 && armmsl == 1) || global.opmslstyle == 1)))
 {
-    diffcharge += 0.015
-    if (diffcharge > 1)
-        diffcharge = 1
+    if (global.currentweapon == 2 && global.diffusionmissiles == 1 && nofire == 0)
+    {
+        if (state == STANDING || state == RUNNING || state == DUCKING || (state == JUMPING && vjump == 1) || (state == GRIP && ((facing == RIGHT && aimdirection != 0) || (facing == LEFT && aimdirection != 1))) || (state == GRABBEDQUEEN && image_index == 2))
+        {
+            diffcharge += 0.015
+            if (diffcharge > 1)
+                diffcharge = 1
+        }
+    }
 }
-if (diffcharge > 0 && (!kFire) && global.diffusionmissiles == 1)
+if (diffcharge > 0 && (((!kFire) && global.opdiffchargestyle == 0) || (kFire && kFirePushedSteps == 0 && global.opdiffchargestyle == 1)))
 {
     if (aimdirection == 0)
         shoot_missile(0)
@@ -121,7 +127,7 @@ if (instance_number(oChargeBeamSpark1) == 0 && chargebeam > 0)
     instance_create((x + aspr2x), (y + aspr2y), oChargeBeamSpark1)
 if (instance_number(oDiffusionChargeSpark) == 0 && diffcharge > 0)
     instance_create((x + aspr2x), (y + aspr2y), oDiffusionChargeSpark)
-if (global.currentweapon != 2 || global.diffusionmissiles == 0 || (global.opmslstyle == 0 && armmsl == 0))
+if (global.currentweapon != 2 || global.diffusionmissiles == 0 || (global.opmslstyle == 0 && armmsl == 0) || state == 23 || state == 24 || state == 27 || state == GRABBEDQUEENMORPH || state == GRABBEDQUEENBELLY)
 {
     diffcharge = 0
     if (instance_number(oDiffusionChargeSpark) > 0)

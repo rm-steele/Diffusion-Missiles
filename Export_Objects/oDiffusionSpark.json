@@ -127,6 +127,86 @@
             "is_not": false
           }
         ]
+      },
+      {
+        "event_subtype": "oBlockShoot",
+        "actions": [
+          {
+            "lib_id": 0,
+            "id": 0,
+            "kind": 0,
+            "use_relative": false,
+            "is_question": false,
+            "use_apply_to": false,
+            "exe_type": 0,
+            "action_name": null,
+            "code_id": "gml_Object_oDiffusionSpark_Collision_25",
+            "argument_count": 0,
+            "who": 0,
+            "relative": false,
+            "is_not": false
+          }
+        ]
+      },
+      {
+        "event_subtype": "oBlockSMissile",
+        "actions": [
+          {
+            "lib_id": 0,
+            "id": 0,
+            "kind": 0,
+            "use_relative": false,
+            "is_question": false,
+            "use_apply_to": false,
+            "exe_type": 0,
+            "action_name": null,
+            "code_id": "gml_Object_oDiffusionSpark_Collision_34",
+            "argument_count": 0,
+            "who": 0,
+            "relative": false,
+            "is_not": false
+          }
+        ]
+      },
+      {
+        "event_subtype": "oBlockMissile",
+        "actions": [
+          {
+            "lib_id": 0,
+            "id": 0,
+            "kind": 0,
+            "use_relative": false,
+            "is_question": false,
+            "use_apply_to": false,
+            "exe_type": 0,
+            "action_name": null,
+            "code_id": "gml_Object_oDiffusionSpark_Collision_33",
+            "argument_count": 0,
+            "who": 0,
+            "relative": false,
+            "is_not": false
+          }
+        ]
+      },
+      {
+        "event_subtype": "oBlockShootChain",
+        "actions": [
+          {
+            "lib_id": 0,
+            "id": 0,
+            "kind": 0,
+            "use_relative": false,
+            "is_question": false,
+            "use_apply_to": false,
+            "exe_type": 0,
+            "action_name": null,
+            "code_id": "gml_Object_oDiffusionSpark_Collision_26",
+            "argument_count": 0,
+            "who": 0,
+            "relative": false,
+            "is_not": false
+          }
+        ]
       }
     ],
     [],
